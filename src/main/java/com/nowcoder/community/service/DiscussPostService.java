@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @Service
-public class DiscussPostService {
+public class  DiscussPostService {
 
     @Autowired
     private DiscussPostMapper discussPostMapper;
@@ -46,7 +46,7 @@ public class DiscussPostService {
         post.setTitle(HtmlUtils.htmlEscape(post.getTitle()));
         post.setContent(HtmlUtils.htmlEscape(post.getContent()));
         // 过滤敏感词
-        post.setTitle(sensitiveFilter.filter(post.getContent()));
+        post.setTitle(sensitiveFilter.filter(post.getTitle()));
         post.setContent(sensitiveFilter.filter(post.getContent()));
 
         return discussPostMapper.insertDiscussPost(post);

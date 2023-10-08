@@ -6,8 +6,6 @@ import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.util.CommunityUtil;
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
@@ -46,19 +44,19 @@ public class AlphaService {
     @Autowired
     private TransactionTemplate transactionTemplate;
 
-    public AlphaService() {
-        System.out.println("实例化AlphaService");
-    }
-
-    @PostConstruct
-    public void init() {
-        System.out.println("初始化AlphaService");
-    }
-
-    @PreDestroy
-    public void destory() {
-        System.out.println("销毁AlphaService");
-    }
+//    public AlphaService() {
+//        System.out.println("实例化AlphaService");
+//    }
+//
+//    @PostConstruct
+//    public void init() {
+//        System.out.println("初始化AlphaService");
+//    }
+//
+//    @PreDestroy
+//    public void destory() {
+//        System.out.println("销毁AlphaService");
+//    }
 
     public String find(){
         return alphaDao.select();
